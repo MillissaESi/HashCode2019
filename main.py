@@ -9,7 +9,7 @@ def readInput(filename):
     ID = 0
     slides_h = []
     output_v = []
-    for i in range(1,N):
+    for i in range(1,N+1):
         photo_components = lines[i].split(" ")
         photo = ph.Photo(ID,photo_components[0],photo_components[1],photo_components[2::])
         if photo.type == 'H':
@@ -36,14 +36,25 @@ def merge_twoLists(l1,l2):
     sortedlist = sorted(list_slides, key=lambda x: len(x.tags), reverse=True)
     return  sortedlist
 
+def writeOutput(filename, listSlides):
+    outF = open(filename,'w+')
+    outF.write(str(len(listSlides)) + '\n')
+    for line in listSlides:
+        # write line to output file
+        for id in line.ID:
+            outF.write(str(id)+ ' ')
+        outF.write('\n')
+
 
 
 if __name__ == "__main__" :
 
-    file = "d_pet_pictures.txt"
+    file = "c_memorable_moments.txt"
     o1, o2 , N =readInput(file)
     list_slides = slideshow_vertical(o2)
     list = merge_twoLists(list_slides,o1)
+    file = 'sortie.txt'
+    writeOutput(file, list)
 
 
 
