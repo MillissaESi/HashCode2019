@@ -35,8 +35,11 @@ def slideshow_vertical(new_list):
 
 def merge_twoLists(l1,l2):
     list_slides = l1 + l2
-    sortedlist = sorted(list_slides, key=lambda x: len(x.tags), reverse=True)
-    return  sortedlist
+    random.shuffle(list_slides)
+    #sortedlist = sorted(list_slides, key=lambda x: len(x.tags), reverse=True)
+    #return  sortedlist
+    return list_slides
+
 
 def writeOutput(filename, listSlides):
     outF = open(filename,'w+')
