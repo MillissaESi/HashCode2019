@@ -2,6 +2,8 @@ import Photo as ph
 import Slide as sl
 import random
 
+
+
 def readInput(filename):
 
     lines = [line.rstrip('\n') for line in open(filename)]
@@ -48,13 +50,13 @@ def writeOutput(filename, listSlides):
 
 
 if __name__ == "__main__" :
-
-    file = "c_memorable_moments.txt"
-    o1, o2 , N =readInput(file)
-    list_slides = slideshow_vertical(o2)
-    list = merge_twoLists(list_slides,o1)
-    file = 'sortie.txt'
-    writeOutput(file, list)
+    file_names= ['a_example.txt',"c_memorable_moments.txt", 'b_lovely_landscapes.txt', 'd_pet_pictures.txt', 'e_shiny_selfies.txt' ]
+    for file in file_names:
+        o1, o2 , N =readInput(file)
+        list_slides = slideshow_vertical(o2)
+        output_list = merge_twoLists(list_slides,o1)
+        file = 'sortie_' + file
+        writeOutput(file, output_list)
 
 
 
