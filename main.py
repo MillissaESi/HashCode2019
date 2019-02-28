@@ -1,5 +1,5 @@
 import Photo as ph
-
+import Slide as slide
 
 def readInput(filename):
 
@@ -18,7 +18,7 @@ def readInput(filename):
         ID +=1
     return (output_h,output_v)
 
-def writeOutput():
+
 
 
 if __name__ == "__main__" :
