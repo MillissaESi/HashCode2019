@@ -55,10 +55,10 @@ def writeOutput(filename, listSlides):
 if __name__ == "__main__" :
     file_names= ['a_example.txt',"c_memorable_moments.txt", 'b_lovely_landscapes.txt', 'd_pet_pictures.txt', 'e_shiny_selfies.txt' ]
     for file in file_names:
-        o1, o2 , N =readInput(file)
+        o1, o2 , N =readInput("Input_Files/"+file)
         list_slides = slideshow_vertical(o2)
         output_list = merge_twoLists(list_slides,o1)
-        file = 'sortie_' + file
+        file = 'Output_Files/sortie_' + file
         writeOutput(file, output_list)
 
 
